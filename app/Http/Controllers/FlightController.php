@@ -19,7 +19,7 @@ class FlightController extends Controller
         $data = Flight::where('is_active', '=', true);
 
         if ($request->Flight_type)
-            $data->where('Flight_type_id', '=', $request->Flight_type);
+            $data->where('flight_type_id', '=', $request->Flight_type);
 
         if ($request->no_paginate) 
             return collect([

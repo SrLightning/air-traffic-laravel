@@ -26,6 +26,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::middleware('auth:sanctum')->group(function() {
-    Route::apiResource('Flight_types', FlightTypeController::class);
-    Route::apiResource('Flights', FlightController::class);
+    Route::apiResource('flight_types', FlightTypeController::class);
+    Route::apiResource('flights', FlightController::class);
 });

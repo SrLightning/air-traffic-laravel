@@ -13,7 +13,7 @@ class CreateFlightTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('Flight_types', function (Blueprint $table) {
+        Schema::create('flight_types', function (Blueprint $table) {
             $table->id();
             $table->string('description', 30);
             $table->boolean('is_active')->default(true);
@@ -28,6 +28,6 @@ class CreateFlightTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Flight_types');
+        Schema::dropIfExists('flight_types');
     }
 }

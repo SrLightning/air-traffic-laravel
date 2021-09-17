@@ -13,11 +13,11 @@ class CreateFlightsTable extends Migration
      */
     public function up()
     {
-        Schema::create('Flights', function (Blueprint $table) {
+        Schema::create('flights', function (Blueprint $table) {
             $table->id();
             $table->string('description', 100);
-            $table->unsignedBigInteger('Flight_type_id');
-            $table->foreign('Flight_type_id')->references('id')->on('Flight_types');
+            $table->unsignedBigInteger('flight_type_id');
+            $table->foreign('flight_type_id')->references('id')->on('flight_types');
             $table->char('size', 1);
             $table->boolean('is_active');
             $table->timestamps();
@@ -31,6 +31,6 @@ class CreateFlightsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Flights');
+        Schema::dropIfExists('flights');
     }
 }

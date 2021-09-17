@@ -10,12 +10,12 @@ class Flight extends Model
     use HasFactory;
 
     protected $with = [
-        'Flight_type'
+        'flight_type'
     ];
 
     protected $fillable = [
         'description',
-        'Flight_type_id',
+        'flight_type_id',
         'size',
         'is_active',
         'created_at',
@@ -28,15 +28,15 @@ class Flight extends Model
 
     public static $rules = [
         'description' => 'string|required|max:100',
-        'Flight_type_id' => 'integer|required|exists:Flight_types,id',
+        'flight_type_id' => 'integer|required|exists:flight_types,id',
         'size' => 'string|required|min:1',
         'is_active' => 'boolean|required',
         'created_at' => 'datetime|nullable',
         'updated_at' => 'datetime|nullable',
     ];
 
-    public function Flight_type()
+    public function flight_type()
     {
-        return $this->belongsTo(FlightType::class, 'Flight_type_id');
+        return $this->belongsTo(FlightType::class, 'flight_type_id');
     }
 }
